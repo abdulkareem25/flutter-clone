@@ -1,3 +1,54 @@
+p {
+  font-family: roboto;
+  font-size: 1.2rem;
+  color: #4A4A4A;
+  line-height: 1.5rem;
+}
+
+h4 {
+  font-family: flutter;
+  font-size: 1.2rem;
+  color: #4A4A4A;
+  font-weight: 700;
+  line-height: 1.4rem;
+}
+
+h3 {
+  font-family: flutter;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: flutter;
+  font-size: 3rem;
+  line-height: 3rem;
+  font-weight: 700;
+}
+
+.btn {
+  font-family: flutter;
+  font-size: 0.8rem;
+  line-height: 1.4rem;
+  font-weight: 700;
+  color: #0468D7;
+  border: 0.1rem solid #0468D7;
+  background-color: white;
+}
+
+.btn-solid {
+  padding: 0.6rem 2rem;
+  font-family: flutter;
+  font-size: 0.8rem;
+  line-height: 1.4rem;
+  font-weight: 700;
+  background-color: #0468D7;
+  color: white;
+  border: none;
+  border-radius: 1.4rem;
+}
+
 @font-face {
   font-family: flutter;
   src: url(./assets/flutter.woff2);
@@ -16,4 +67,113 @@ html,
 body {
   height: 100%;
   width: 100%;
+  font-family: flutter;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  color: #4A4A4A;
+  background-color: white;
+  flex-direction: row;
+  padding: 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+header img {
+  width: 8rem;
+  cursor: pointer;
+}
+header .menu i {
+  font-size: 1.2rem;
+  padding: 0 0.6rem;
+  cursor: pointer;
+}
+header nav {
+  display: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+main #hero {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(35deg, #fcdde8, #f3fcff 60%);
+  padding: 1.5rem;
+  gap: 7rem;
+  font-family: flutter;
+  text-align: center;
+}
+main #hero img {
+  width: 100%;
+}
+main #hero h1 {
+  font-size: 2.9rem;
+  font-weight: 700;
+  line-height: 2.8rem;
+  padding-top: 4rem;
+}
+main #hero h6 {
+  font-size: 2.1rem;
+  line-height: 2.6rem;
+  font-weight: 400;
+}
+
+@media (min-width: 1024px) {
+  header .menu {
+    display: none;
+  }
+  header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+  }
+  header nav .nav1 {
+    display: flex;
+    gap: 2.5rem;
+  }
+  header nav .nav1 h5 {
+    font-family: flutter;
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+  header nav i {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  main section {
+    width: 100%;
+    align-items: center;
+  }
+  main #hero {
+    padding: 3.5rem;
+  }
+  main #hero .top {
+    max-width: 1280px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1/3fr;
+    grid-template-areas: "h1 img" "h6 h6";
+  }
+  main #hero .top h1 {
+    padding: 3rem;
+    grid-area: h1;
+    text-align: start;
+    font-size: 4.4rem;
+    align-self: center;
+    line-height: 4.4rem;
+  }
+  main #hero .top img {
+    grid-area: img;
+  }
+  main #hero h6 {
+    max-width: 1280px;
+    grid-area: h6;
+    padding: 0 9rem 2rem 9rem;
+  }
 }
