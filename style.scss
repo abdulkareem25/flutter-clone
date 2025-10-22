@@ -37,11 +37,13 @@ header {
     @include flex();
     color: #4A4A4A;
     background-color: white;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
     flex-direction: row;
     padding: 1.5rem;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
+    width: 100%;
+    position: fixed;
     top: 0;
 
     img {
@@ -63,17 +65,21 @@ header {
 main {
     @include flex();
 
-    #hero {
+    section {
         @include flex();
-        background: linear-gradient(35deg, #fcdde8, #f3fcff 60%);
-        padding: 1.5rem;
-        gap: 7rem;
-        font-family: flutter;
-        text-align: center;
+        padding: 2rem 1rem;
 
         img {
             width: 100%;
         }
+    }
+
+    #hero {
+        padding: 7rem 1.5rem;
+        background: linear-gradient(35deg, #fcdde8, #f3fcff 60%);
+        text-align: center;
+        gap: 7rem;
+
 
         h1 {
             font-size: 2.9rem;
@@ -87,6 +93,105 @@ main {
             line-height: 2.6rem;
             font-weight: 400;
         }
+    }
+
+    #container {
+        padding: 2rem 0;
+        gap: 2rem;
+
+        section {
+            gap: 2rem;
+
+            .top,
+            .bottom {
+                padding: 0 1rem;
+            }
+        }
+
+        #cards {
+            .card {
+                padding: 1.5rem 0;
+                border-top: 4px solid #e8eaed;
+
+                h3 {
+                    padding-bottom: 1.5rem;
+                }
+
+                img {
+                    padding: 1.5rem;
+                    width: 100%;
+                }
+            }
+        }
+
+        .bottom {
+            .btns {
+                @include flex();
+                gap: 1rem;
+                align-items: start;
+
+                :nth-child(2) {
+                    padding: 0.6rem 1.5rem;
+                    font-size: 1rem;
+                    line-height: 1.4rem;
+                    font-weight: 700;
+                    border: none;
+                    background-color: transparent;
+
+
+                    i {
+                        padding-left: 0.2rem;
+                    }
+                }
+            }
+        }
+
+        #consultant,
+        #package2 {
+            background: linear-gradient(35deg, #fcfce2 40%, #f5fbfe 90%);
+        }
+
+        #bar {
+            .content {
+                position: relative;
+                overflow: hidden;
+                margin: 0 0.5rem;
+                background-color: #042449;
+                padding: 6rem 2rem;
+                border-radius: 3rem;
+                color: white;
+                width: 100%;
+
+                img {
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+
+                .bottom {
+                    position: inherit;
+                    z-index: 1;
+
+                    p {
+                        color: white;
+                    }
+
+                    .btns {
+                        :nth-child(1) {
+                            border: none;
+                        }
+
+                        :nth-child(2) {
+                            color: white;
+                        }
+                    }
+                }
+
+
+            }
+        }
+
     }
 }
 
@@ -108,7 +213,6 @@ main {
                 gap: 2.5rem;
 
                 h5 {
-                    font-family: flutter;
                     font-size: 0.8rem;
                     cursor: pointer;
                 }
@@ -124,12 +228,12 @@ main {
     main {
 
         section {
-            width: 100%;
             align-items: center;
+            width: 100%;
         }
 
         #hero {
-            padding: 3.5rem;
+            padding: 7rem;
 
             .top {
                 max-width: 1280px;
@@ -156,8 +260,62 @@ main {
             h6 {
                 max-width: 1280px;
                 grid-area: h6;
-                padding: 0 9rem 2rem 9rem;
+                padding: 0 6rem 2rem 6rem;
             }
+        }
+
+        #container {
+
+            section {
+                flex-direction: row;
+                justify-content: center;
+                gap: 3.5rem;
+
+                .content {
+                    display: flex;
+                    align-items: center;
+                    max-width: 1280px;
+                    padding: 2rem;
+
+                    .top,
+                    .bottom {
+                        width: 50%;
+                    }
+
+                    .bottom {
+                        padding: 0 4.5rem;
+                    }
+                }
+
+            }
+
+            #cards {
+                max-width: 1280px;
+                padding: 2rem;
+
+                .card {
+                    padding: 2rem 3rem;
+                }
+            }
+
+            .content .bottom .btns {
+                flex-direction: row;
+                gap: 0;
+            }
+
+            #community .content,
+            #events2 .content {
+                flex-direction: row-reverse;
+            }
+
+            #bar {
+                .content {
+                    img {
+                        width: max-content;
+                    }
+                }
+            }
+
         }
     }
 }
