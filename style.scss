@@ -45,6 +45,7 @@ header {
     width: 100%;
     position: fixed;
     top: 0;
+    z-index: 5;
 
     img {
         width: 8rem;
@@ -152,10 +153,11 @@ main {
         }
 
         #bar {
+            padding: 1.5rem;
+
             .content {
                 position: relative;
                 overflow: hidden;
-                margin: 0 0.5rem;
                 background-color: #042449;
                 padding: 6rem 2rem;
                 border-radius: 3rem;
@@ -192,6 +194,86 @@ main {
             }
         }
 
+    }
+}
+
+footer {
+    background-color: #F8F9FA;
+    padding: 3rem;
+
+
+    ul {
+        list-style: none;
+
+        li {
+            font-size: 1rem;
+            line-height: 1.4rem;
+            font-weight: 700;
+            padding: 0.3rem 0;
+        }
+
+        li a {
+            font-weight: 400;
+            text-decoration: none;
+            color: #4A4A4A;
+        }
+
+        li a:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+
+    #top {
+        @include flex();
+        gap: 1rem;
+
+        img {
+            width: 8rem;
+            cursor: pointer;
+        }
+
+        #footer-links {
+            @include flex();
+            padding: 2rem 1.7rem;
+            gap: 2.5rem;
+
+        }
+    }
+
+    #middle {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        padding: 2rem;
+
+        i {
+            font-size: 1.2rem;
+            line-height: 1.2rem;
+            color: rgb(74, 74, 74);
+            cursor: pointer;
+        }
+    }
+
+    #bottom {
+        border-top: 1px solid #dadce0;
+        padding: 2rem 0;
+        
+        p {
+            font-size: 0.9rem;
+            line-height: 1.4rem;
+            text-align: center;
+        }
+        
+        ul {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+
+            li a {
+                font-size: 0.9rem;
+            }
+        }
     }
 }
 
@@ -316,6 +398,35 @@ main {
                 }
             }
 
+        }
+    }
+
+    footer {
+        #top {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            #footer-links {
+                width: 55%;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        }
+
+        #middle {
+            justify-content: flex-start;
+        }
+
+        #bottom {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 7rem;
+            
+            p {
+                text-align: start;
+            }
         }
     }
 }
